@@ -2,66 +2,41 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Product\StoreRequest;
+use App\Http\Requests\Product\UpdateRequest;
 use App\Models\Product;
-use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
+
 
 class ProductController extends Controller
 {
-  /**
-   * Display a listing of the resource.
-   */
   public function index()
   {
     $products = Product::get();
-    return view('products.index', compact('products'));
+    return view('products.index')->with('products', $products);
   }
 
-  /**
-   * Show the form for creating a new resource.
-   */
   public function create()
   {
-    return view('products.create', compact('product'));
+    return view('products.create', ['product' => new product]);
   }
 
-  /**
-   * Store a newly created resource in storage.
-   */
-  public function store(StoreProductRequest $request)
+  public function store(StoreRequest $request)
   {
-    Product::create($request->all());
-    return redirect()->route('products.index');
+    Product::create($request->validated());
+    return to_route('products.index')->with('status', 'Producto creado con exito');
   }
 
-  /**
-   * Display the specified resource.
-   */
-  public function show(Product $product)
-  {
-    return view('products.show', compact('product'));
-  }
-
-  /**
-   * Show the form for editing the specified resource.
-   */
   public function edit(Product $product)
   {
-    return view('products.edit', compact('product'));
+    return view('products.edit', ['product' => $product]);
   }
 
-  /**
-   * Update the specified resource in storage.
-   */
-  public function update(UpdateProductRequest $request, Product $product)
+  public function update(UpdateRequest $request, Product $product)
   {
-    $product->update($request->all());
-    return redirect()->route('products.index');
+    $product->update($request->validated());
+    return to_route('products.index')->with('status', 'Producto actualizado con exito');
   }
 
-  /**
-   * Remove the specified resource from storage.
-   */
   public function destroy(Product $product)
   {
     $product->delete();

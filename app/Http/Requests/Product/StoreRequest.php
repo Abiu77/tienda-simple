@@ -22,20 +22,20 @@ class StoreRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'name' => 'string|required|unique:products|max:255',
-      'description' => 'nullable|max:255',
-      'sell_price' => 'required|',
+      'code' => 'required|unique:products',
+      'name' => 'required',
+      'description' => 'required',
+      'sell_price' => 'required',
     ];
   }
   public function messages(): array
   {
     return [
-      'name.required' => 'El nombre es requerido',
-      'name.string' => 'El nombre debe ser una cadena de caracteres',
-      'name.unique' => 'El nombre ya existe',
-      'name.max' => 'El nombre debe tener máximo 255 caracteres',
-      'description.max' => 'La descripción debe tener máximo 255 caracteres',
-      'sell_price.required' => 'El precio de venta es requerido',
+      'code.required' => 'El código es obligatorio',
+      'code.unique' => 'El código ya existe',
+      'name.required' => 'El nombre es obligatorio',
+      'description.required' => 'El descripción es obligatorio',
+      'sell_price.required' => 'El precio es obligatorio',
     ];
   }
 }
