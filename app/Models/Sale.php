@@ -9,16 +9,8 @@ class Sale extends Model
 {
   use HasFactory;
   protected $fillable = [
-    'user_id',
     'sale_date',
+    'user_id',
     'total'
   ];
-  public function user()
-  {
-    return $this->belongsTo(User::class);
-  }
-  public function saleDetails()
-  {
-    return $this->hasMany(SaleDetail::class);
-  }
 }

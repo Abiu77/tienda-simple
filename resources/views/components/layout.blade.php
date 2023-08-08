@@ -16,14 +16,19 @@
 <body class="w-full flex flex-col   bg-gray-100  dark:bg-gray-900 ">
   <header class="w-full text-gray-100 bg-gray-700">
     <section class="lg:container lg:mx-auto flex justify-between px-4 py-2 lg:px-20 lg:py-4">
-      <p class="font-black">Simple</p>
+      <a class="font-black text-lg" href="/">Simple</a>
       <ul class="flex">
-        <li><a class="px-4 py-2 font-normal" href="/">Ventas</a></li>
-        <li><a class="px-4 py-2 font-normal" href="products">Productos</a></li>
-        <li><a class="px-4 py-2 font-normal" href="/users">Usuarios</a></li>
+        <li><a class="px-4 py-2 font-normal" href="{{route('sales.index')}}">Ventas</a></li>
+        <li><a class="px-4 py-2 font-normal" href="{{route('products.index')}}">Productos</a></li>
+        <li><a class="px-4 py-2 font-normal" href="{{route('users.index')}}">Usuarios</a></li>
       </ul>
       <div>
-        HI
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle" width="30" height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+          <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+          <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855"></path>
+        </svg>
       </div>
     </section>
   </header>

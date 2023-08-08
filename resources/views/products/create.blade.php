@@ -5,6 +5,5 @@
     @csrf
     @include('products.form-fields')
     <button class="bg-green-500 px-3 py-1 rounded" type="submit">Guardar</button>
-
   </form>
 </x-layout>
