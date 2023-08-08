@@ -7,7 +7,7 @@
   <section class="container mx-auto flex flex-col gap-10  px-4  lg:px-20 py-8 h-screen">
     <h1 class="text-7xl font-black">Bienvenido</h1>
     <div class="flex flex-wrap gap-4 text-gray-950 ">
-      <a class="w-32 h-32 flex flex-col items-center gap-4 p-4 rounded-lg bg-orange-400 font-bold text-lg text-center" href="{{route('sales.index')}}">
+      <a class="w-32 h-32 flex flex-col items-center gap-4 p-4 rounded-lg bg-orange-300 font-bold text-lg text-center" href="{{route('sales.index')}}">
         <span>Ventas</span>
         <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-report-money" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
