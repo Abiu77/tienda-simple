@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Requests\Sale;
+namespace App\Http\Requests\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreRequest extends FormRequest
+class UpdateRequest extends FormRequest
 {
+  /**
+   * Determine if the user is authorized to make this request.
+   */
   public function authorize(): bool
   {
     return true;
@@ -16,21 +19,20 @@ class StoreRequest extends FormRequest
    *
    * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
    */
-
   public function rules(): array
   {
     return [
-      'user_id' => 'required',
-      'sale_date' => 'required|unique:products',
-      'total' => 'required',
+      'name' => 'required',
+      'lastname' => 'required',
+      'email' => 'required',
     ];
   }
   public function messages(): array
   {
     return [
-      'user_id.required' => 'El código es obligatorio',
-      'sale_date.required' => 'El código es obligatorio',
-      'total.required' => 'El precio es obligatorio',
+      'name.required' => 'El nombre es obligatorio',
+      'lastname.required' => 'El apellido es obligatorio',
+      'email.required' => 'El email es obligatorio'
     ];
   }
 }

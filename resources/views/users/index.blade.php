@@ -3,7 +3,7 @@
     <div class="flex justify-between">
       <h1 class="text-gray-100 text-4xl font-bold"> Usuarios </h1>
       <aside class="bg-green-400 p-2 rounded-md">
-        <a class=" " href="#">
+        <a class=" " href="{{route('users.create')}}">
           <x-plusIcon></x-pluIcon>
         </a>
       </aside>
@@ -28,10 +28,14 @@
             <td class="px-6 py-4 border-2 border-gray-700">{{ $user->lastname}}</td>
             <td class="px-6 py-4 border-2 border-gray-700">{{ $user->email}}</td>
             <td class="px-6 py-4 border-2 border-gray-700">
-              <button class="bg-red-500 px-3 py-1 rounded">Eliminar</button>
+              <form action="{{route('users.destroy', $user)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="bg-red-500 px-3 py-1 rounded">Eliminar</button>
+              </form>
             </td>
             <td class="px-6 py-4 border-2 border-gray-700">
-              <button class="bg-blue-600 px-3 py-1 rounded"> Editar</button>
+              <a class="bg-blue-600 px-3 py-1 rounded" href="{{route('users.edit', $user)}}"> Editar</a>
             </td>
           </tr>
           @endforeach

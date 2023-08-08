@@ -13,7 +13,8 @@
         </a>
       </aside>
     </div>
-    <form class="w-full rounded-md " action="">
+    <form class="w-full rounded-md ">
+
       <table class="w-full border-2 rounded-lg border-gray-700">
         <thead class="bg-gray-800">
           <tr class="">
@@ -35,10 +36,14 @@
             <td class="px-6 py-4 border-2 border-gray-700">{{ $product->description }}</td>
             <td class="px-6 py-4 border-2 border-gray-700">{{ $product->sell_price }}</td>
             <td class="px-6 py-4 border-2 border-gray-700">
-              <a class="bg-red-500 px-3 py-1 rounded" href="{{route('products.delete', $product)}}">Eliminar</a>
+              <form action="{{route('products.destroy', $product)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="bg-red-500 px-3 py-1 rounded">Eliminar</button>
+              </form>
             </td>
             <td class="px-6 py-4 border-2 border-gray-700">
-              <a class="bg-blue-600 px-3 py-1 rounded" href="{{route('products.edit', $product)}}"> Editar</a>
+              <a class="bg-blue-600 px-3 py-1 rounded" href="{{route('products.edit', $product)}}">Editar</a>
             </td>
           </tr>
           @endforeach
