@@ -1,6 +1,5 @@
 <x-layout title='crear Productos'>
   <h2>Crear nuevo producto</h2>
-  @dump($product->toArray())
   <form class="flex flex-col gap-8" action="{{route('products.store')}}" method="POST">
     @csrf
     @include('products.form-fields')

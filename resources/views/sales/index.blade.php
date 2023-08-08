@@ -19,6 +19,7 @@
           <tr class="">
             <th class="px-6 py-3 border-2 border-gray-700">ID</th>
             <th class="px-6 py-3 border-2 border-gray-700">Ver detalle</th>
+            <th class="px-6 py-3 border-2 border-gray-700">Vendedor</th>
             <th class="px-6 py-3 border-2 border-gray-700">Fecha de venta</th>
             <th class="px-6 py-3 border-2 border-gray-700">Total</th>
           </tr>
@@ -28,8 +29,9 @@
           <tr>
             <td class="px-6 py-4 border-2 border-gray-700">{{$sale->id}}</td>
             <td class="px-6 py-4 border-2 border-gray-700">
-              <a class="bg-cyan-500 px-3 py-1 rounded">Ver detalle</a>
+              <a class="bg-cyan-500 px-3 py-1 rounded" href="{{route('details.index')}}">Ver detalle</a>
             </td>
+            <td class="px-6 py-4 border-2 border-gray-700">{{$sale->user_id}}</td>
             <td class="px-6 py-4 border-2 border-gray-700">{{$sale->sale_date}}</td>
             <td class="px-6 py-4 border-2 border-gray-700">{{$sale->total}}</td>
 

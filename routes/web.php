@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SaleController;
+use App\Http\Controllers\SaleDetailController;
 use App\Http\Controllers\UserController;
+use App\Models\saleDetail;
 use Illuminate\Support\Facades\Route;
 
 
@@ -20,6 +22,7 @@ Route::delete("/products/{product}", [ProductController::class, 'destroy'])->nam
 Route::get("/sales", [SaleController::class, 'index'])->name('sales.index');
 Route::get("/sales/create", [SaleController::class, 'create'])->name('sales.create');
 Route::post("/sales", [SaleController::class, 'store'])->name('sales.store');
+Route::get("/details", [SaleDetailController::class, 'index'])->name('details.index');
 
 Route::get("/users", [UserController::class, 'index'])->name('users.index');
 Route::get("/users/create", [UserController::class, 'create'])->name('users.create');

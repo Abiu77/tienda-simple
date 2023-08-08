@@ -16,15 +16,14 @@ return new class extends Migration
 
       $table->unsignedBigInteger('user_id');
       $table->foreign('user_id')->references('id')->on('users');
-
-      $table->dateTime('sale_date');
+      $table->date('sale_date');
       $table->decimal('total', 8, 2);
 
       $table->timestamps();
     });
   }
 
-  /**
+  /** 
    * Reverse the migrations.
    */
   public function down(): void
