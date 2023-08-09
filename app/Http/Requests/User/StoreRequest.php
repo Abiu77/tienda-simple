@@ -24,6 +24,7 @@ class StoreRequest extends FormRequest
     return [
       'name' => 'required',
       'lastname' => 'required',
+      'dni' => 'required|unique:users',
       'email' => 'required|unique:users',
     ];
   }
@@ -32,6 +33,7 @@ class StoreRequest extends FormRequest
     return [
       'name.required' => 'El nombre es obligatorio',
       'lastname.required' => 'El apellido es obligatorio',
+      'dni.required' => 'El dni es obligatorio',
       'email.unique' => 'El código ya existe',
     ];
   }

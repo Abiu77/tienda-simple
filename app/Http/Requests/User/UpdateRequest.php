@@ -24,6 +24,7 @@ class UpdateRequest extends FormRequest
     return [
       'name' => 'required',
       'lastname' => 'required',
+      'dni' => 'required',
       'email' => 'required',
     ];
   }
@@ -32,6 +33,7 @@ class UpdateRequest extends FormRequest
     return [
       'name.required' => 'El nombre es obligatorio',
       'lastname.required' => 'El apellido es obligatorio',
+      'dni.required' => 'El dni es obligatorio',
       'email.required' => 'El email es obligatorio'
     ];
   }

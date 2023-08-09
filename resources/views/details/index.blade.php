@@ -25,7 +25,6 @@
             <td class="px-6 py-4 border-2 border-gray-700">{{$detail->quantity}}</td>
             <td class="px-6 py-4 border-2 border-gray-700">{{$detail->price}}</td>
             <td class="px-6 py-4 border-2 border-gray-700">{{$detail->subtotal}}</td>
-
           </tr>
           @endforeach
         </tbody>

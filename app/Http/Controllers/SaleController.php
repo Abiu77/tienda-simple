@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Sale\StoreRequest;
-use App\Http\Requests\Sale\UpdateRequest;
+use App\Models\Product;
 use App\Models\Sale;
+use App\Models\User;
 
 class SaleController extends Controller
 {
@@ -17,7 +18,14 @@ class SaleController extends Controller
 
   public function create()
   {
-    return view('sales.create', ['sale' => new sale]);
+    $users = User::get();
+    $products = Product::get();
+
+    return view('sales.create', [
+      'sale' => new sale,
+      'users' => $users,
+      'products' => $products
+    ]);
   }
 
   public function store(StoreRequest $request)
@@ -25,21 +33,4 @@ class SaleController extends Controller
     Sale::create($request->validated());
     return to_route('sales.index')->with('status', 'Venta creada con exito');
   }
-
-  /*  public function edit(Sale $sale)
-  {
-    return view('products.edit', ['product' => $sale]);
-  }
-
-  public function update(UpdateRequest $request, Sale $sale)
-  {
-    $sale->update($request->validated());
-    return to_route('products.index')->with('status', 'Producto actualizado con exito');
-  }
-
-  public function destroy(Sale $sale)
-  {
-    $sale->delete();
-    return to_route('products.index')->with('status', 'Producto eliminado con exito');
-  } */
 }

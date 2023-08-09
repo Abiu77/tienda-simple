@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Sale;
 
+use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreRequest extends FormRequest
@@ -20,17 +21,17 @@ class StoreRequest extends FormRequest
   public function rules(): array
   {
     return [
-      'user_id' => 'required',
-      'sale_date' => 'required|unique:products',
-      'total' => 'required',
+      'user_id' => 'required|exists:users,id',
+      'product_id' => 'required|exists:products,id',
+      'total' => 'required|numeric',
     ];
   }
   public function messages(): array
   {
     return [
-      'user_id.required' => 'El código es obligatorio',
-      'sale_date.required' => 'El código es obligatorio',
-      'total.required' => 'El precio es obligatorio',
+      'user_id' => 'El nombre del usuario es obligatorio',
+      'product_id' => 'El nombre del producto es obligatorio',
+      'total' => 'El precio es obligatorio',
     ];
   }
 }

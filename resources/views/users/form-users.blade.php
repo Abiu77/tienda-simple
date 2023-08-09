@@ -13,6 +13,13 @@
    @enderror
  </label>
  <label class="flex gap-4 items-start justify-between">
+   <span>DNI:</span>
+   <input name="dni" class="bg-gray-700 rounded px-4 py-2 w-1/2" type="text" require value="{{old('dni', $user->dni)}}" maxlength="8">
+   @error('dni')
+   <p class=" text-red-600">{{$message}}</p>
+   @enderror
+ </label>
+ <label class="flex gap-4 items-start justify-between">
    <span>Email:</span>
    <input name="email" class="bg-gray-700 rounded px-4 py-2 w-1/2" type="email" require value="{{old('email', $user->email)}}">
    @error('email')

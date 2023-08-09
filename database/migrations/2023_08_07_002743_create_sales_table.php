@@ -6,9 +6,8 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-  /**
-   * Run the migrations.
-   */
+  // Run the migrations.
+
   public function up(): void
   {
     Schema::create('sales', function (Blueprint $table) {
@@ -16,16 +15,14 @@ return new class extends Migration
 
       $table->unsignedBigInteger('user_id');
       $table->foreign('user_id')->references('id')->on('users');
-      $table->date('sale_date');
+      $table->unsignedBigInteger('product_id');
+      $table->foreign('product_id')->references('id')->on('products');
       $table->decimal('total', 8, 2);
 
       $table->timestamps();
     });
   }
 
-  /** 
-   * Reverse the migrations.
-   */
   public function down(): void
   {
     Schema::dropIfExists('sales');
