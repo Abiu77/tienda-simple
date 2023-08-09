@@ -6,7 +6,7 @@
   - ✅ Ventas: productos, ventas y detalle de ventas.
     - ✅ Crear una venta.
     - ✅ Listar ventas.
-    - ✅ Opcional: Modal al darle click a una venta para ver el detalle.
+    -  Opcional: Modal al darle click a una venta para ver el detalle.
 - ✅ Framework: Laravel
   - ✅ Opconal: Usar TailwindCSS.
 - ✅ README: Pasos de instalación.
@@ -17,7 +17,7 @@
 3. Crear archivo `.env` y copiar el contenido de `.env.example`.
 2. Instalar dependencias con composer: `composer install`.
 4. Generar la key de la aplicación: `php artisan key:generate`.
-## levantar el servidor
+## Levantar el servidor
 1. `php artisan serve --no-reload`
 2. `npm run dev`
 ## Crear base de datos
