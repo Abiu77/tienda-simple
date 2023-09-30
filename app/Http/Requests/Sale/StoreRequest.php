@@ -17,21 +17,30 @@ class StoreRequest extends FormRequest
    *
    * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
    */
-
   public function rules(): array
   {
     return [
-      'user_id' => 'required|exists:users,id',
-      'product_id' => 'required|exists:products,id',
-      'total' => 'required|numeric',
+      'user_id' => ['required', 'exists:users,id'],
+      'product_id' => ['required', 'exists:products,id'],
+      'total' => ['required', 'numeric', 'min:0'],
     ];
   }
+
+  /**
+   * Get the error messages for the defined validation rules.
+   *
+   * @return array<string, string>
+   */
   public function messages(): array
   {
     return [
-      'user_id' => 'El nombre del usuario es obligatorio',
-      'product_id' => 'El nombre del producto es obligatorio',
-      'total' => 'El precio es obligatorio',
+      'user_id.required' => 'El campo usuario es requerido',
+      'user_id.exists' => 'El usuario seleccionado no existe',
+      'product_id.required' => 'El campo producto es requerido',
+      'product_id.exists' => 'El producto seleccionado no existe',
+      'total.required' => 'El campo total es requerido',
+      'total.numeric' => 'El campo total debe ser un número',
+      'total.min' => 'El campo total debe ser mayor a 0',
     ];
   }
 }
