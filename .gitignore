@@ -22,4 +22,4 @@ yarn-error.log
 fly.toml
 
 pnpm-lock.yaml
-.env
+composer.lock
