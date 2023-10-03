@@ -18,9 +18,9 @@
 4. Generar la `APP_KEY` de la aplicación: `php artisan key:generate`.
 5. Instalar dependencias con PNPM o NPM: `pnpm install` o `npm install`.
 ### Crear base de datos
-1. Crear una base de datos en un gestor de base de datos de tu prefrencia: `tienda_simple`.
+1. Crear una base de datos en un gestor de base de datos de tu preferencia: `tienda_simple`.
 ### Migraciones
 1. `php artisan migrate`.
 ### Levantar el servidor
 1. `php artisan serve --no-reload`.
-2. `pnpm run dev` ó `npm run dev`.
+2. `pnpm run dev` o `npm run dev`.
