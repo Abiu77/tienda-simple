@@ -18,19 +18,19 @@ class SaleController extends Controller
 
   public function create()
   {
-    $users = User::get();
-    $products = Product::get();
+    $users = User::all();
+    $products = Product::all();
 
     return view('sales.create', [
-      'sale' => new sale,
+      'sale' => new Sale(),
       'users' => $users,
-      'products' => $products
+      'products' => $products,
     ]);
   }
 
   public function store(StoreRequest $request)
   {
     Sale::create($request->validated());
-    return to_route('sales.index')->with('status', 'Venta creada con exito');
+    return redirect()->route('sales.index')->with('success', 'Venta creada correctamente');
   }
 }
