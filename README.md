@@ -4,12 +4,13 @@
 - ✅ Crear un proyecto en GitHub: **Tienda Simple**.
   - ✅ Usuarios: Registrar, editar y listar usuarios.
   - ✅ Ventas: productos, ventas y detalle de ventas.
-    - [] Crear una venta.
+    - [x] Crear una venta.
     - ✅ Listar ventas.
-    - [] Opcional: Modal al darle click a una venta para ver el detalle.
+    - [x] Opcional: Modal al darle click a una venta para ver el detalle.
 - ✅ README: Pasos de instalación.
 ## Frameworks a usar
-- ✅ Framework: Laravel y Tailwind CSS.
+- ✅ Laravel.
+- ✅ Tailwind CSS.
 ## Pasos de instalación
 1. Clonar el repositorio `https://github.com/ypnqh/tienda-simple.git`.
 2. Instalar dependencias con composer: `composer install`.
