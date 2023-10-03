@@ -22,4 +22,4 @@
 1. `php artisan migrate`.
 ### Levantar el servidor
 1. `php artisan serve --no-reload`.
-2. `pnpm run dev` o `npm run dev`.
+2. `pnpm run dev` ó `npm run dev`.
