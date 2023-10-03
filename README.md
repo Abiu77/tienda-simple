@@ -13,8 +13,8 @@
 ## Pasos de instalación
 1. Clonar el repositorio `https://github.com/ypnqh/tienda-simple.git`
 2. Instalar dependencias con composer: `composer install`.
-3. Crear un archivo `.env` y copia el contenido del archivo `.env.example` al archivo `.env`.
-4. Generar la key de la aplicación: `php artisan key:generate`.
+3. Copiar el contenido de `.env.example`, luego crear y pegar al archivo `.env`.
+4. Generar la `APP_KEY` de la aplicación: `php artisan key:generate`.
 5. Instalar dependencias con PNPM o NPM: `pnpm install` o `npm install` 
 ### Crear base de datos
 1. Crear ua base de datos en un gestor de base de datos de tu prefrencia: `tienda_simple`.
